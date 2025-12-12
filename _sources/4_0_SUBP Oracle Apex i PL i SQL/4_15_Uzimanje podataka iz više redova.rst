@@ -109,7 +109,7 @@
 ::
 
     DECLARE
-        fon FROM clanovi;
+        CURSOR kursor_clan IS SELECT ime||' '||prezime clan, telefon FROM clanovi;
     BEGIN
         FOR v_red IN kursor_clan LOOP
             DBMS_OUTPUT.PUT_LINE('Ime i prezime clana: '||v_red.clan);
